@@ -2,8 +2,8 @@ name: Reusable workflow
 on:
   workflow_call:
     inputs:
-      who-to-great:
-        description: 'The person to great'
+      who-to-greet:
+        description: 'The person to greet'
         type: string
         required: true
         default: World

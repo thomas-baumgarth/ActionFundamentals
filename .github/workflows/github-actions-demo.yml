@@ -16,6 +16,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
     steps:
       - run: |
           echo "The job was triggerde by the event: ${{ github.event.name }}"

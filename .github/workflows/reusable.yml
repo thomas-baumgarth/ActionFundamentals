@@ -1,1 +1,10 @@
 name: Reusable workflow
+on:
+  workflow_call:
+    inputs:
+      who-to-great:
+        description: 'The person to great'
+        type: string
+        required: true
+        default: World
+  

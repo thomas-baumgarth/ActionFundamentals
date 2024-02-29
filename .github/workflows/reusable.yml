@@ -7,4 +7,9 @@ on:
         type: string
         required: true
         default: World
-  
+jobs:
+  reusable-job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Great someone
+        run: echo "Hello ${{ inputs.who-to-greet }}"

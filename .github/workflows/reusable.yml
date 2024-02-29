@@ -7,9 +7,19 @@ on:
         type: string
         required: true
         default: World
+    outputs:
+      current-time:
+        description: 'The time when greeting.' 
+        value: ${{ jobs.reusable-jobs.outputs.current-time }}
+      
 jobs:
   reusable-job: 
     runs-on: ubuntu-latest
+    outputs:
+      current-time: ${{ steps.time.outputs.time }}
     steps:
       - name: Great someone
         run: echo "Hello ${{ inputs.who-to-greet }}"
+      - name: Set time
+        id: time
+        run: echo "time=$(date)" >> $GITHUB_OUTPUT  
